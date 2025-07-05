@@ -4,15 +4,6 @@ import java.util.LinkedList;
 
 public class Block {
 
-    /*
-    * Requirnments of a basic block:
-    *       Date and time of creatio
-    *       Index
-    *       previouse block data
-    *       Data of the current new block
-    *  **Data must be encrypted with SHA256**
-    */
-
     private String timeStamp;
     private String previousHash;
     private String newHash;
