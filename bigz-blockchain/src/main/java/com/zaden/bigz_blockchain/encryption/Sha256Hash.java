@@ -1,32 +1,37 @@
 package com.zaden.bigz_blockchain.encryption;
 
 import com.zaden.bigz_blockchain.blocks.Block;
-
+//
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.Base64;
 
 public class Sha256Hash {
 
     private String completeHash;
 
-    public String createCompleteHash(String blockData) throws NoSuchAlgorithmException {
-        var dataToBytes = blockData.getBytes();
-
-        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-        messageDigest.update(dataToBytes);
-
-        String digest = Arrays.asList(messageDigest.digest()).toString();
-        return digest;
+    static  void print(byte[] msg){
+        var encoded = Base64
+                .getEncoder()
+                .encodeToString(msg);
+        System.out.println(encoded);
     }
 
-//    public String getCompleteHash(){}\
+    public void createCompleteHash(String blockData) throws NoSuchAlgorithmException {
+        var dataToBytes = blockData.getBytes();
+
+        var messageDigest = MessageDigest.getInstance("SHA-256");
+        messageDigest.update(dataToBytes);
+
+        print(messageDigest.digest(dataToBytes));
+    }
+
 
     public static void main(String[] args) throws NoSuchAlgorithmException {
         Sha256Hash hash = new Sha256Hash();
-
-        System.out.println(hash.createCompleteHash("zaden"));
+        //47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+        hash.createCompleteHash("zaden");
     }
-
 
 }
