@@ -13,4 +13,7 @@ public class BlockChain {
     public LinkedList getListOfBlocks(){
         return  this.lisOfBlocks;
     }
+    public void addBlockToBlockChain(Block block){ 
+        lisOfBlocks.add(block);
+    }
 }
