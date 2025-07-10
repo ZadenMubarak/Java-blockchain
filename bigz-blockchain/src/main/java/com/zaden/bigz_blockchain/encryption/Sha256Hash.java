@@ -1,7 +1,5 @@
 package com.zaden.bigz_blockchain.encryption;
 
-import com.zaden.bigz_blockchain.blocks.Block;
-//
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
