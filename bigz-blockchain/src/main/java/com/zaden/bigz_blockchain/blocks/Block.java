@@ -9,6 +9,7 @@ public class Block {
     private String newHash;
 
     public Block(){
+        //analyzing the world
 
     }
     public Block(String data, String timeStamp){}
